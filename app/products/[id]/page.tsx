@@ -11,7 +11,7 @@ async function SingleProductPage({ params }: { params: { id: string } }) {
   const dollarsAmount = formatCurrency(price);
   return (
     <section>
-      <BreadCrumbs name={product.name} />
+      <BreadCrumbs name={product?.name} />
       <div className='mt-6 grid gap-y-8 lg:grid-cols-2 lg:gap-x-16'>
         {/* IMAGE FIRST COL */}
         <div className='relative h-full'>
