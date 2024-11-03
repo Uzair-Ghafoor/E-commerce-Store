@@ -4,7 +4,6 @@ import {
   DropdownMenu,
   DropdownMenuTrigger,
   DropdownMenuContent,
-  DropdownMenuSeparator,
   DropdownMenuItem,
 } from '../ui/dropdown-menu';
 import { Button } from '../ui/button';

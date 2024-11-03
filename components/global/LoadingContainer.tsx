@@ -1,5 +1,4 @@
 import React from 'react';
-import { Skeleton } from '../ui/skeleton';
 import LoadingProduct from './LoadingProduct';
 
 const LoadingContainer = () => {

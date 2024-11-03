@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ThemeProvider } from './theme-provider';
 const Providers = ({ children }: { children: React.ReactNode }) => {
   return (

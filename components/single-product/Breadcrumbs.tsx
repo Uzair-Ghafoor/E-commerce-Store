@@ -1,5 +1,4 @@
 import React from 'react';
-import { fetchSingleProduct } from '@/utils/actions';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -7,7 +6,6 @@ import {
   BreadcrumbList,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
-import { Product } from '@prisma/client';
 const page = async ({ name }: { name: string }) => {
   return (
     <>

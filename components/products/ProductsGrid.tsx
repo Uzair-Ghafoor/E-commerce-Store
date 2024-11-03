@@ -5,7 +5,6 @@ import { Card, CardContent } from '../ui/card';
 import { formatCurrency } from '@/utils/format';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaAffiliatetheme } from 'react-icons/fa';
 const ProductsGrid = ({ products }: { products: Product[] }) => {
   return (
     <div className=' pt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3'>

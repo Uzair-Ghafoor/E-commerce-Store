@@ -2,7 +2,6 @@ import React from 'react';
 import { fetchAllProducts } from '@/utils/actions';
 import ProductsList from './ProductsList';
 import ProductsGrid from './ProductsGrid';
-import { Separator } from '../ui/separator';
 import { LuLayoutGrid, LuList } from 'react-icons/lu';
 import { Button } from '../ui/button';
 import Link from 'next/link';
