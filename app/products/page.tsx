@@ -4,10 +4,11 @@ import React from 'react';
 const Products = async ({
   searchParams,
 }: {
-  searchParams: { layout?: string; search?: string };
+  searchParams: Promise<{ layout?: string; search?: string }>;
 }) => {
-  const layout = searchParams.layout || 'grid';
-  const search = searchParams.search || '';
+  const searchparamsPromise = await searchParams;
+  const layout = searchparamsPromise.layout || 'grid';
+  const search = searchparamsPromise.search || '';
 
   return (
     <>
