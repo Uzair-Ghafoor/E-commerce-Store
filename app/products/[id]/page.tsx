@@ -6,12 +6,13 @@ import FavoriteToggleButton from '@/components/products/FavoriteToggleButton';
 import AddToCart from '@/components/single-product/AddToCart';
 import ProductRating from '@/components/single-product/ProductRating';
 
-interface Params {
-  params: { id: string };
-}
-
-async function SingleProductPage({ params }: Params) {
-  const product = await fetchSingleProduct(params.id);
+async function SingleProductPage({
+  params,
+}: {
+  params: Promise<{ id: string }>;
+}) {
+  const resolvedParams = await params;
+  const product = await fetchSingleProduct(resolvedParams.id);
   const { name, image, company, description, price } = product;
   const dollarsAmount = formatCurrency(price);
   return (
@@ -33,15 +34,15 @@ async function SingleProductPage({ params }: Params) {
         <div>
           <div className='flex gap-x-8 items-center'>
             <h1 className='capitalize text-3xl font-bold'>{name}</h1>
-            <FavoriteToggleButton productId={params.id} />
+            <FavoriteToggleButton productId={resolvedParams.id} />
           </div>
-          <ProductRating productId={params.id} />
+          <ProductRating productId={resolvedParams.id} />
           <h4 className='text-xl mt-2'>{company}</h4>
           <p className='mt-3 text-md bg-muted inline-block p-2 rounded-md'>
             {dollarsAmount}
           </p>
           <p className='mt-6 leading-8 text-muted-foreground'>{description}</p>
-          <AddToCart productId={params.id} />
+          <AddToCart productId={resolvedParams.id} />
         </div>
       </div>
     </section>
