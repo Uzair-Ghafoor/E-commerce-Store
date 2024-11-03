@@ -22,7 +22,7 @@ const Navsearch = () => {
     if (!params.get('search')) {
       setSearch('');
     }
-  }, [params.get('search')]);
+  }, [params]);
 
   return (
     <Input
