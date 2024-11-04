@@ -4,6 +4,7 @@ import Navbar from '@/components/navbar/Navbar';
 import Container from '@/components/global/Container';
 import { Roboto } from 'next/font/google';
 import Providers from './Providers';
+import { ClerkProvider } from '@clerk/nextjs';
 
 const roboto = Roboto({
   weight: '400',
@@ -22,13 +23,15 @@ export default function RootLayout({
 }>) {
   // `${geistSans.variable} ${geistMono.variable} antialiased`;
   return (
-    <html lang='en' suppressHydrationWarning>
-      <body className={roboto.className}>
-        <Providers>
-          <Navbar />
-          <Container className=' py-20'>{children}</Container>
-        </Providers>
-      </body>
-    </html>
+    <ClerkProvider>
+      <html lang='en' suppressHydrationWarning>
+        <body className={roboto.className}>
+          <Providers>
+            <Navbar />
+            <Container className=' py-20'>{children}</Container>
+          </Providers>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
